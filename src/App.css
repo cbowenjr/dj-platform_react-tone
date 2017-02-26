@@ -1,0 +1,228 @@
+.App {
+}
+.appHeader {
+  font-family: 'Shadows Into Light', cursive;
+  margin-top: 0px;
+  margin-bottom: 3vh;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 4rem;
+  letter-spacing: 5px;
+}
+#potato {
+  background-image:url('../assets/images/potato.png');
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height:50px;
+  width:100px;
+  transform: rotate(-90deg);
+  margin-right: -23px;
+  margin-left: -23px;
+}
+.header-spin {
+  background-color: #222;
+  position: relative;
+  top: 5vh;
+  display: inline-block;
+  height:150px;
+  width:150px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  animation: 5s App-logo-spin linear infinite;
+  color: white;
+  left:1vw;
+  right:2vw;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.chooseRecord {
+margin-left: 7.5vw;
+font-size: 2.3rem;
+}
+.chooseRecord2 {
+margin-left: 22.5vw;
+font-size: 2.3rem;
+}
+.djSet {
+  position: relative;
+  display: flex;
+  font-family: 'Architects Daughter', cursive;
+}
+.turnMix {
+    display: flex;
+    color: white;
+    text-align: center;
+}
+.turntable {
+  background-image:url('../assets/images/turntable.jpeg');
+  background-size: cover;
+  height:60vh;
+  width: 35vw;
+  display: inline-block;
+  background-color: #222;
+  border-right:.5vw solid black;
+  box-sizing: border-box;
+}
+.play {
+  height: 8vh;
+  width: 4.5vw;
+  background-color: black;
+  color: white;
+  line-height: 8vh;
+  position: relative;
+  margin-top: 50vh;
+  margin-left: .7vw;
+  background-color: #222;
+  border:2px solid black;
+  box-shadow: 5px 5px 20px black;
+  transition: all .5s;
+}
+.play:hover {
+  color: blue;
+  cursor: pointer;
+}
+.mixer {
+  display: inline-block;
+  background-color: #222;
+  box-sizing: border-box;
+  width: 15vw;
+  height:60vh;
+  text-align: center;
+  border-top:.5vw solid black;
+  border-bottom:.5vw solid black;
+}
+#mixer1 {
+  border-right: 5px solid black;
+}
+.filtersContainer {
+  display: flex;
+  justify-content:space-around;
+}
+.filters {
+  height:2.5rem;
+  width:2.5rem;
+  box-sizing: border-box;
+  background-color: gray;
+  border-radius: 50%;
+  line-height: 2.5rem;
+  box-shadow: 2px 2px 20px black;
+}
+.bpmPitch {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4vh;
+}
+.bpmUp {
+  margin:auto;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid black;
+  transition: all .5s;
+}
+.bpmUp:hover {
+  border-bottom: 15px solid blue;
+  cursor: pointer;
+}
+.bpmDown {
+  margin:auto;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid black;
+  transition: all .5s;
+}
+.bpmDown:hover {
+  border-top: 15px solid blue;
+  cursor: pointer;
+}
+.pitchUp {
+  margin:auto;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid black;
+  transition: all .5s;
+}
+.pitchUp:hover {
+  border-bottom: 15px solid blue;
+  cursor: pointer;
+}
+.pitchDown {
+  margin:auto;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid black;
+  transition: all .5s;
+}
+.pitchDown:hover {
+  border-top: 15px solid blue;
+  cursor: pointer;
+}
+.gain  {
+  text-align: center;
+  margin-top: 4vh;
+}
+.volumeUp {
+  margin:auto;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid black;
+  transition: all .5s;
+}
+.volumeUp:hover {
+  border-bottom: 20px solid blue;
+  cursor: pointer;
+}
+.volumeDown {
+  margin:auto;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid black;
+  transition: all .5s;
+}
+.volumeDown:hover {
+  border-top: 20px solid blue;
+  cursor: pointer;
+}
+.loopRew {
+  margin-top: 3vh;
+  display: flex;
+  justify-content: space-around;
+}
+.loop {
+  background-image:url('../assets/images/loop.png');
+  background-size: cover;
+  height:2.7rem;
+  width:2.7rem;
+  box-sizing: border-box;
+}
+.rewind {
+  background-image:url('../assets/images/rewind.png');
+  background-size: cover;
+  height:2.7rem;
+  width:2.7rem;
+  box-sizing: border-box;
+}
+.loop:hover {
+  animation: 5s loop infinite linear;
+  cursor: pointer;
+}
+@keyframes loop {
+  from {transform: rotate(0deg);}
+  from {transform: rotate(-360deg);}
+}
