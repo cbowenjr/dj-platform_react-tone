@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
-
+import Tone from 'tone';
 
 class Turntable2 extends Component {
   constructor () {
     super();
     this.state = {
-      record:'Choose a Record'
+      record:'Choose a Record',
+      audio:'none',
+      time:0,
+      count:0
     }
     this.changeRecord = this.changeRecord.bind(this);
     this.showRecords = this.showRecords.bind(this);
+    this.fetchRecord = this.fetchRecord.bind(this);
+    this.play = this.play.bind(this);
+    this.keepTime = this.keepTime.bind(this)
+  }
+  fetchRecord(id) {
+    let player = new Tone.GrainPlayer({
+      "url" : `https://a.clyp.it/rhsf3tcq.mp3`,
+      "loop" : true,
+      "grainSize" : 0.1,
+      "overlap" : 0.05,
+    }).toMaster();
+    if (player) {
+      this.setState({
+        audio:player
+      })
+    }
   }
   changeRecord (record) {
     this.setState({
@@ -16,16 +35,50 @@ class Turntable2 extends Component {
     })
     document.getElementById('record2UL').classList.remove('show');
     document.getElementById('chooseRecord2').classList.remove('disappear');
+    this.fetchRecord(record.title)
   }
   showRecords () {
     document.getElementById('record2UL').classList.add('show');
     document.getElementById('chooseRecord2').classList.add('disappear');
   }
+  play () {
+    let audio = this.state.audio;
+    let playButton = document.getElementById('playButton2');
+    if (audio !== 'none' && playButton.innerText === 'START') {
+      audio.start("+0.0", `${this.state.count}`);
+      playButton.innerText = 'STOP';
+      this.setState({
+        playing:true
+      })
+      this.keepTime();
+    } else {
+      this.setState({
+        playing:false
+      })
+      this.keepTime();
+      audio.stop();
+      playButton.innerText = 'START';
+    }
+  }
+  keepTime () {
+    let count = this.state.count;
+    let timer = setInterval(() => {
+    if (this.state.playing===true) {
+      count=count+1;
+      this.setState({
+        count:count
+      })
+    }
+    }, 1000);
+    if (this.state.playing === false) {
+      clearInterval(timer);
+    }
+  }
   render() {
     return (
       <div>
       <ul className="recordsUL hide" id="record2UL">
-        <li className="recordTitles" ref={(list) => {this.list1 = list; }} onClick={() => {this.changeRecord(this.list1) }}>Ice Cube - Check Yo Self 1</li>
+         <li className="recordTitles" title="5mfgyypmqj" ref={(list) => {this.list1 = list; }} onClick={() => {this.changeRecord(this.list1) }}>Ice Cube - Check Yo Self 1</li>
         <li className="recordTitles" ref={(list) => {this.list2 = list; }} onClick={() => {this.changeRecord(this.list2) }}>Ice Cube - Check Yo Self 2</li>
         <li className="recordTitles" ref={(list) => {this.list3 = list; }} onClick={() => {this.changeRecord(this.list3) }}>Ice Cube - Check Yo Self 3</li>
         <li className="recordTitles" ref={(list) => {this.list4 = list; }} onClick={() => {this.changeRecord(this.list4) }}>Ice Cube - Check Yo Self 4</li>
@@ -66,7 +119,7 @@ class Turntable2 extends Component {
             </div>
           </div>
           <div className="turntable">
-            <div className="play" id="playButton">START</div>
+            <div className="play" id="playButton2" onClick={this.play}>START</div>
           </div>
         </div>
       </div>
