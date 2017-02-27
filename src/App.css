@@ -59,7 +59,7 @@
 .recordTitles:hover {
   cursor: pointer;
   background-color: rgba(0,0,0,.8);
-  color: blue;
+  color: rgba(255,255,255,.7);
 }
 .chooseRecord {
 text-align: center;
@@ -135,6 +135,12 @@ height: 8vh;
   border-radius: 50%;
   line-height: 2.5rem;
   box-shadow: 2px 2px 20px black;
+  transition: all .5s;
+}
+.filters:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 .bpmPitch {
   display: flex;
