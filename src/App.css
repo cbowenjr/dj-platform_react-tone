@@ -30,18 +30,20 @@
   margin-left: -23px;
 }
 .header-spin {
-  background-color: black;
+  background-color: rgba(0,0,0,.85);
   position: relative;
-  top: 5vh;
+  top: 7vh;
   display: inline-block;
-  height:150px;
-  width:150px;
+  height:155px;
+  width:155px;
   box-sizing: border-box;
   border-radius: 50%;
   animation: 5s App-logo-spin linear infinite;
-  color: white;
+  color:rgba(255,255,255,.8);
   left:1vw;
   right:2vw;
+  padding-left: 16px;
+  font-size: 5.5rem;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
