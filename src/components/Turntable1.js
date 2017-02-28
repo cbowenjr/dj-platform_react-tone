@@ -266,7 +266,6 @@ class Turntable1 extends Component {
         <li className="recordTitles" id={require('../../assets/images/pharcyde.jpeg')} title="vvfizvnoe1" ref={(list) => {this.list10 = list; }} onClick={() => {this.changeRecord(this.list10) }}>Runnin' (Instrumental) | The Pharcyde</li>
         <li className="recordTitles" id={require('../../assets/images/dilla_sofar.jpeg')} title="oeoo5ouwel" ref={(list) => {this.list11 = list; }} onClick={() => {this.changeRecord(this.list11) }}>So Far To Go (Instrumental) | J Dilla</li>
         <li className="recordTitles" id={require('../../assets/images/jamesbrown_funky.jpeg')} title="2os948xe96" ref={(list) => {this.list12 = list; }} onClick={() => {this.changeRecord(this.list12) }}>Funky Drummer | James Brown</li>
-        <li className="recordTitles" id={require('../../assets/images/jamesbrown_machine.jpeg')} title="5eggxa62k3" ref={(list) => {this.list13 = list; }} onClick={() => {this.changeRecord(this.list13) }}>Sex Machine | James Brown</li>
         <li className="recordTitles" id={require('../../assets/images/lauryn_thatthing.jpeg')} title="sow56bmfgc" ref={(list) => {this.list14 = list; }} onClick={() => {this.changeRecord(this.list14) }}>That Thing (Acapella) | Lauryn Hill</li>
         <li className="recordTitles" id={require('../../assets/images/justinbeiber_letme.jpeg')} title="cmlizavpp6" ref={(list) => {this.list15 = list; }} onClick={() => {this.changeRecord(this.list15) }}>Let Me Love You (Acapella...Almost) | Justin Bieber</li>
         <li className="recordTitles" id={require('../../assets/images/coldwater.jpeg')} title="484y8cf45u" ref={(list) => {this.list16 = list; }} onClick={() => {this.changeRecord(this.list16) }}>Cold Water ft. Justin Bieber & MØ (Instrumental) | Major Lazer</li>
@@ -278,6 +277,7 @@ class Turntable1 extends Component {
         <li className="recordTitles" id={require('../../assets/images/blurredlines.png')} title="8trcmqgwqc" ref={(list) => {this.list22 = list; }} onClick={() => {this.changeRecord(this.list22) }}>Blurred Lines ft. T.I. & Pharrell (Acapella) | Robin Thicke</li>
         <li className="recordTitles" id={require('../../assets/images/slumv.jpeg')} title="wtx2womqmj" ref={(list) => {this.list23 = list; }} onClick={() => {this.changeRecord(this.list23) }}>Fall in Love (Instrumental) | Slum Village</li>
         <li className="recordTitles" id={require('../../assets/images/hakuma.jpeg')} title="wzpkf6kisq" ref={(list) => {this.list24 = list; }} onClick={() => {this.changeRecord(this.list24) }}>Hakuna Matata | The Lion King</li>
+        <li className="recordTitles" id={require('../../assets/images/mosdef_msfatbooty.jpeg')} title="mshy33xl6q" ref={(list) => {this.list25 = list; }} onClick={() => {this.changeRecord(this.list25) }}>Mos Def | Ms Fat Booty</li>
       </ul>
         <h2 className="chooseRecord" id="chooseRecord1" onClick={this.showRecords}>{this.state.record}</h2>
         <div className="turnMix">
