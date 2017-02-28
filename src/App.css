@@ -53,7 +53,7 @@
 }
 .recordTitles {
   list-style: none;
-  font-size: 2rem;
+  font-size: 1.7rem;
   transition: all .5s;
 }
 .recordTitles:hover {
@@ -63,8 +63,9 @@
 }
 .chooseRecord {
 text-align: center;
-font-size: 2rem;
-height: 8vh;
+font-size: 1.7rem;
+margin-top: 4.5vh;
+height: 7.5vh;
 }
 .chooseRecord:hover {
   cursor: pointer;
@@ -94,25 +95,25 @@ height: 8vh;
 #recordSpin1 {
   position: absolute;
   background-image:url('../assets/images/record.png');
-  background-size: 82%;
-  margin-left: -2vw;
-  margin-top: -4.8vh;
+  background-size: cover;
+  margin-left: .75vw;
+  margin-top: 3vh;
   background-position: center;
   background-repeat: no-repeat;
-  height: 515px;
-  width: 515px;
+  height: 70%;
+  width: 28.2%;
   padding-top: 0.1px;
 }
 #recordSpin2 {
   position: absolute;
   background-image:url('../assets/images/record.png');
-  background-size: 82%;
-  margin-left: -2vw;
-  margin-top: -4.8vh;
+  background-size: cover;
+  margin-left: .75vw;
+  margin-top: 3vh;
   background-position: center;
   background-repeat: no-repeat;
-  height: 515px;
-  width: 515px;
+  height: 70%;
+  width: 28.2%;
   padding-top: 0.1px;
 }
 .recordSpinActive {
@@ -137,15 +138,15 @@ height: 8vh;
   to { transform: rotate(-360deg); }
 }
 #recordImg1 {
-  background-image:url('../assets/images/tribe2.jpeg');
+/*  background-image:url('../assets/images/tribe2.jpeg');*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 165px;
-  width: 165px;
+  height: 35%;
+  width: 33%;
   border-radius: 100%;
   margin:auto;
-  margin-top: 22.5vh;
+  margin-top: 17vh;
   animation: .5s appear linear;
 }
 #recordImg2 {
@@ -153,11 +154,11 @@ height: 8vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 165px;
-  width: 165px;
+  height: 35%;
+  width: 33%;
   border-radius: 100%;
   margin:auto;
-  margin-top: 22.5vh;
+  margin-top: 17vh;
   animation: .5s appear linear;
 }
 @keyframes appear {

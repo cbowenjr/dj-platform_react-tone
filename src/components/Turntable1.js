@@ -47,7 +47,7 @@ class Turntable1 extends Component {
       "wet" : 0
     }).toMaster();
     let player = new Tone.GrainPlayer({
-      "url" : `https://a.clyp.it/rhsf3tcq.mp3`,
+      "url" : `http://k003.kiwi6.com/hotlink/${id}.mp3`,
       "loop" : true,
       "grainSize" : 0.1,
       "overlap" : 0.05,
@@ -73,7 +73,7 @@ class Turntable1 extends Component {
     }
     this.fetchRecord(record.title);
     document.getElementById('recordSpin1').classList.remove('hide');
-    document.getElementById('recordImg1').style.backgroundImage=`url(${record.accessKey})`;
+    document.getElementById('recordImg1').style.backgroundImage=`url(${record.id})`;
   }
   showRecords () {
     document.getElementById('record1UL').classList.add('show');
@@ -254,14 +254,30 @@ class Turntable1 extends Component {
     return (
       <div>
       <ul className="recordsUL hide" id="record1UL">
-        <li className="recordTitles" accessKey={require('../../assets/images/tribe2.jpeg')} title="5mfgyypmqj" ref={(list) => {this.list1 = list; }} onClick={() => {this.changeRecord(this.list1) }}>Ice Cube - Check Yo Self 1</li>
-        <li className="recordTitles" ref={(list) => {this.list2 = list; }} onClick={() => {this.changeRecord(this.list2) }}>Ice Cube - Check Yo Self 2</li>
-        <li className="recordTitles" ref={(list) => {this.list3 = list; }} onClick={() => {this.changeRecord(this.list3) }}>Ice Cube - Check Yo Self 3</li>
-        <li className="recordTitles" ref={(list) => {this.list4 = list; }} onClick={() => {this.changeRecord(this.list4) }}>Ice Cube - Check Yo Self 4</li>
-        <li className="recordTitles" ref={(list) => {this.list5 = list; }} onClick={() => {this.changeRecord(this.list5) }}>Ice Cube - Check Yo Self 5</li>
-        <li className="recordTitles" ref={(list) => {this.list6 = list; }} onClick={() => {this.changeRecord(this.list6) }}>Ice Cube - Check Yo Self 6</li>
-        <li className="recordTitles" ref={(list) => {this.list7 = list; }} onClick={() => {this.changeRecord(this.list7) }}>Ice Cube - Check Yo Self 7</li>
-        <li className="recordTitles" ref={(list) => {this.list8 = list; }} onClick={() => {this.changeRecord(this.list8) }}>A Tribe Called Quest - Electric Relaxation</li>
+        <li className="recordTitles" id={require('../../assets/images/tribe_bonita.jpeg')} title="3ttkerbsu3" ref={(list) => {this.list1 = list; }} onClick={() => {this.changeRecord(this.list1) }}>Bonita Applebum (Instrumental) | A Tribe Called Quest</li>
+        <li className="recordTitles" id={require('../../assets/images/tribe_kickit.jpeg')} title="wgon64j4gd" ref={(list) => {this.list2 = list; }} onClick={() => {this.changeRecord(this.list2) }}>Can I Kick It (Instrumental) | A Tribe Called Quest</li>
+        <li className="recordTitles" id={require('../../assets/images/tribe2.jpeg')} title="uwzeiup27a" ref={(list) => {this.list3 = list; }} onClick={() => {this.changeRecord(this.list3) }}>Electric Relaxation | A Tribe Called Quest</li>
+        <li className="recordTitles" id={require('../../assets/images/aretha_onestep.jpeg')} title="3r37zffqso" ref={(list) => {this.list4 = list; }} onClick={() => {this.changeRecord(this.list4) }}>One Step Ahead | Aretha Franklin</li>
+        <li className="recordTitles" id={require('../../assets/images/charlie_talk.jpeg')} title="dhq57p2vdx" ref={(list) => {this.list5 = list; }} onClick={() => {this.changeRecord(this.list5) }}>We Don't talk anymore (Acapella) | Charlie Puth</li>
+        <li className="recordTitles" id={require('../../assets/images/whereareyou.jpeg')} title="ttjjew5mue" ref={(list) => {this.list6 = list; }} onClick={() => {this.changeRecord(this.list6) }}>Where Are You Now (Instrumental) - Skrillex & Diplo ft. Justin Bieber</li>
+        <li className="recordTitles" id={require('../../assets/images/common_usedto.jpeg')} title="f2rhkuml50" ref={(list) => {this.list7 = list; }} onClick={() => {this.changeRecord(this.list7) }}>I Used To Love H.E.R. (Acapella) | Common</li>
+        <li className="recordTitles" id={require('../../assets/images/disclosure_latch.png')} title="azsp6164z4" ref={(list) => {this.list8 = list; }} onClick={() => {this.changeRecord(this.list8) }}>Latch (Instrumental) | Disclosure ft. Sam Smith</li>
+        <li className="recordTitles" id={require('../../assets/images/justinbeiber_letme.jpeg')} title="ne9qljntmf" ref={(list) => {this.list9 = list; }} onClick={() => {this.changeRecord(this.list9) }}>Let Me Love You (Andrew Watt Acoustic) | DJ Snake ft. Justin Bieber</li>
+        <li className="recordTitles" id={require('../../assets/images/pharcyde.jpeg')} title="vvfizvnoe1" ref={(list) => {this.list10 = list; }} onClick={() => {this.changeRecord(this.list10) }}>Runnin' (Instrumental) | The Pharcyde</li>
+        <li className="recordTitles" id={require('../../assets/images/dilla_sofar.jpeg')} title="oeoo5ouwel" ref={(list) => {this.list11 = list; }} onClick={() => {this.changeRecord(this.list11) }}>So Far To Go (Instrumental) | J Dilla</li>
+        <li className="recordTitles" id={require('../../assets/images/jamesbrown_funky.jpeg')} title="2os948xe96" ref={(list) => {this.list12 = list; }} onClick={() => {this.changeRecord(this.list12) }}>Funky Drummer | James Brown</li>
+        <li className="recordTitles" id={require('../../assets/images/jamesbrown_machine.jpeg')} title="5eggxa62k3" ref={(list) => {this.list13 = list; }} onClick={() => {this.changeRecord(this.list13) }}>Sex Machine | James Brown</li>
+        <li className="recordTitles" id={require('../../assets/images/lauryn_thatthing.jpeg')} title="sow56bmfgc" ref={(list) => {this.list14 = list; }} onClick={() => {this.changeRecord(this.list14) }}>That Thing (Acapella) | Lauryn Hill</li>
+        <li className="recordTitles" id={require('../../assets/images/justinbeiber_letme.jpeg')} title="cmlizavpp6" ref={(list) => {this.list15 = list; }} onClick={() => {this.changeRecord(this.list15) }}>Let Me Love You (Acapella...Almost) | Justin Bieber</li>
+        <li className="recordTitles" id={require('../../assets/images/coldwater.jpeg')} title="484y8cf45u" ref={(list) => {this.list16 = list; }} onClick={() => {this.changeRecord(this.list16) }}>Cold Water ft. Justin Bieber & MØ (Instrumental) | Major Lazer</li>
+        <li className="recordTitles" id={require('../../assets/images/leanon.jpeg')} title="whe0lrhl1i" ref={(list) => {this.list17 = list; }} onClick={() => {this.changeRecord(this.list17) }}>Lean On (Instrumental) | Major Lazer & DJ Snake & MØ</li>
+        <li className="recordTitles" id={require('../../assets/images/leanon.jpeg')} title="gssvww47gj" ref={(list) => {this.list18 = list; }} onClick={() => {this.changeRecord(this.list18) }}>Lean On (Acapella) | Major Lazer & DJ Snake & MØ</li>
+        <li className="recordTitles" id={require('../../assets/images/frontin.jpeg')} title="4f2aknr9uq" ref={(list) => {this.list19 = list; }} onClick={() => {this.changeRecord(this.list19) }}>Frontin' (Acapella) | Pharrell</li>
+        <li className="recordTitles" id={require('../../assets/images/Pharrell_Williams_Happy.jpeg')} title="ljetsb40xq" ref={(list) => {this.list20 = list; }} onClick={() => {this.changeRecord(this.list20) }}>Happy (Acapella) | Pharrell</li>
+        <li className="recordTitles" id={require('../../assets/images/qtip_letsride.jpeg')} title="0gmgwfhffk" ref={(list) => {this.list21 = list; }} onClick={() => {this.changeRecord(this.list21) }}>Let's Ride (Instrumental) | Q-Tip</li>
+        <li className="recordTitles" id={require('../../assets/images/blurredlines.png')} title="8trcmqgwqc" ref={(list) => {this.list22 = list; }} onClick={() => {this.changeRecord(this.list22) }}>Blurred Lines ft. T.I. & Pharrell (Acapella) | Robin Thicke</li>
+        <li className="recordTitles" id={require('../../assets/images/slumv.jpeg')} title="wtx2womqmj" ref={(list) => {this.list23 = list; }} onClick={() => {this.changeRecord(this.list23) }}>Fall in Love (Instrumental) | Slum Village</li>
+        <li className="recordTitles" id={require('../../assets/images/hakuma.jpeg')} title="wzpkf6kisq" ref={(list) => {this.list24 = list; }} onClick={() => {this.changeRecord(this.list24) }}>Hakuna Matata | The Lion King</li>
       </ul>
         <h2 className="chooseRecord" id="chooseRecord1" onClick={this.showRecords}>{this.state.record}</h2>
         <div className="turnMix">
