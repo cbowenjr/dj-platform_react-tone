@@ -9,7 +9,9 @@ class Turntable1 extends Component {
       record:'Choose a Record',
       audio:'none',
       time:0,
-      count:0
+      count:0,
+      reverse:false,
+      forward:false
     }
     this.changeRecord = this.changeRecord.bind(this);
     this.showRecords = this.showRecords.bind(this);
@@ -25,6 +27,8 @@ class Turntable1 extends Component {
     this.lowPassFilter = this.lowPassFilter.bind(this);
     this.highPassFilter = this.highPassFilter.bind(this);
     this.delay = this.delay.bind(this);
+    this.reverse = this.reverse.bind(this);
+    this.forward = this.forward.bind(this);
   }
   fetchRecord(id) {
     let gain = new Tone.Gain({
@@ -37,9 +41,9 @@ class Turntable1 extends Component {
       "Q":0,
       "gain":3
     }).toMaster();
-    let feedbackDelay = new Tone.PingPongDelay({
-      "delayTime" : "8n",
-      "feedback" : 0.6,
+    let feedbackDelay = new Tone.FeedbackDelay({
+      "delayTime" : "0.25",
+      "feedback" : 0.5,
       "wet" : 0
     }).toMaster();
     let player = new Tone.GrainPlayer({
@@ -67,7 +71,9 @@ class Turntable1 extends Component {
     if (this.state.playing === true) {
       this.play();
     }
-    this.fetchRecord(record.title)
+    this.fetchRecord(record.title);
+    document.getElementById('recordSpin1').classList.remove('hide');
+    document.getElementById('recordImg1').style.backgroundImage=`url(${record.accessKey})`;
   }
   showRecords () {
     document.getElementById('record1UL').classList.add('show');
@@ -77,11 +83,12 @@ class Turntable1 extends Component {
     let audio = this.state.audio;
     let playButton = document.getElementById('playButton1');
     if (audio !== 'none' && playButton.innerText === 'START') {
-      audio.start("+0.1", `${this.state.count}`);
-      playButton.innerText = 'STOP';
       this.setState({
         playing:true
       })
+      audio.start("+0.1", `${this.state.count}`);
+      document.getElementById('recordSpin1').classList.add('recordSpinActive');
+      playButton.innerText = 'STOP';
       this.keepTime();
     } else {
       this.setState({
@@ -89,22 +96,41 @@ class Turntable1 extends Component {
       })
       this.keepTime();
       audio.stop();
+      document.getElementById('recordSpin1').classList.remove('recordSpinActive');
       playButton.innerText = 'START';
     }
   }
   keepTime () {
     let count = this.state.count;
     let timer = setInterval(() => {
-    if (this.state.playing===true) {
+    if (this.state.playing===true && this.state.reverse===false && this.state.forward===false) {
       count=count+1;
       this.setState({
         count:count
       })
+    } else if (this.state.playing===true && this.state.reverse===true) {
+      count=count-1;
+      this.setState({
+        count:count,
+        timeReversed:true
+      })
+    } else if (this.state.playing===true && this.state.forward===true) {
+      count=count+2;
+      this.setState({
+        count:count,
+        timeForwarded:true
+      })
     }
     }, 1000);
-    if (this.state.playing === false) {
-      clearInterval(timer);
-    }
+    if (this.state.playing===false) {
+        clearInterval(timer);
+        console.log('cleared')
+         this.setState({
+            timeForwarded:false,
+            reverse:false,
+            forward:false
+          });
+      }
   }
   raiseBMP () {
     if (this.state.audio !== 'none') {
@@ -175,20 +201,60 @@ class Turntable1 extends Component {
     }
   }
   delay () {
-    let gain = this.state.gain;
-    if (this.state.audio !== 'none' && gain.gain.value < 2) {
-      gain.gain.value+=.1;
-       console.log(gain.gain.value);
-      this.setState({
-        gain:gain
-      })
+    let delay = this.state.delay;
+    if (this.state.audio !== 'none' && delay.wet.value===0 ) {
+      delay.wet.value=1;
+    } else if (delay.wet.value===1) {
+      delay.wet.value=0;
     }
   }
+  reverse () {
+    let audio = this.state.audio;
+    let rev = document.getElementById('record1rewind');
+    if (this.state.reverse===false) {
+      this.setState({
+        reverse:true
+      })
+      document.getElementById('recordSpin1').classList.add('recordRevSpinActive');
+      this.keepTime();
+    }
+    rev.addEventListener('mouseup', ()=> {
+      this.setState({
+        playing:false
+      })
+      document.getElementById('recordSpin1').classList.remove('recordRevSpinActive');
+      this.keepTime();
+      audio.stop();
+      document.getElementById('playButton1').innerText = 'START';
+      this.play();
+     })
+   }
+  forward () {
+    let audio = this.state.audio;
+    let forward = document.getElementById('record1forward');
+    if (this.state.forward===false) {
+      this.setState({
+        forward:true
+      })
+      document.getElementById('recordSpin1').classList.add('recordForwardSpinActive');
+      this.keepTime();
+    }
+    forward.addEventListener('mouseup', ()=> {
+      this.setState({
+        playing:false
+      })
+      document.getElementById('recordSpin1').classList.remove('recordForwardSpinActive');
+      this.keepTime();
+      audio.stop();
+      document.getElementById('playButton1').innerText = 'START';
+      this.play();
+     })
+   }
   render() {
     return (
       <div>
       <ul className="recordsUL hide" id="record1UL">
-        <li className="recordTitles" title="5mfgyypmqj" ref={(list) => {this.list1 = list; }} onClick={() => {this.changeRecord(this.list1) }}>Ice Cube - Check Yo Self 1</li>
+        <li className="recordTitles" accessKey={require('../../assets/images/tribe2.jpeg')} title="5mfgyypmqj" ref={(list) => {this.list1 = list; }} onClick={() => {this.changeRecord(this.list1) }}>Ice Cube - Check Yo Self 1</li>
         <li className="recordTitles" ref={(list) => {this.list2 = list; }} onClick={() => {this.changeRecord(this.list2) }}>Ice Cube - Check Yo Self 2</li>
         <li className="recordTitles" ref={(list) => {this.list3 = list; }} onClick={() => {this.changeRecord(this.list3) }}>Ice Cube - Check Yo Self 3</li>
         <li className="recordTitles" ref={(list) => {this.list4 = list; }} onClick={() => {this.changeRecord(this.list4) }}>Ice Cube - Check Yo Self 4</li>
@@ -200,14 +266,17 @@ class Turntable1 extends Component {
         <h2 className="chooseRecord" id="chooseRecord1" onClick={this.showRecords}>{this.state.record}</h2>
         <div className="turnMix">
           <div className="turntable">
+            <div className="recordSpin hide" id="recordSpin1">
+              <div className="recordImg" id="recordImg1"></div>
+            </div>
             <div className="play" id="playButton1" onClick={this.play}>START</div>
           </div>
           <div className="mixer" id="mixer1">
-            <h3>On 1</h3>
+            <h3 className="mixerTitle">{this.state.record}</h3>
             <div className="filtersContainer">
               <div className="filters" id="record1HP" onClick={this.highPassFilter}>HP</div>
               <div className="filters" id="record1LP" onClick={this.lowPassFilter}>LP</div>
-              <div className="filters" id="record1delay">Echo</div>
+              <div className="filters" id="record1delay" onClick={this.delay}>Echo</div>
             </div>
             <div className="bpmPitch">
               <div>
@@ -227,8 +296,8 @@ class Turntable1 extends Component {
               <div className="volumeDown" id="record1subgain" onClick={this.lowerGain}></div>
             </div>
             <div className="loopRew">
-              <div className="rewind" id="record1rewind"></div>
-              <div className="loop" id="record1loop"></div>
+              <div className="rewind" id="record1rewind" onMouseDown={this.reverse}></div>
+              <div className="forward" id="record1forward" onMouseDown={this.forward}></div>
             </div>
           </div>
         </div>

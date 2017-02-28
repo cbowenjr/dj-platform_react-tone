@@ -91,6 +91,79 @@ height: 8vh;
   border-right:.5vw solid black;
   box-sizing: border-box;
 }
+#recordSpin1 {
+  position: absolute;
+  background-image:url('../assets/images/record.png');
+  background-size: 82%;
+  margin-left: -2vw;
+  margin-top: -4.8vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 490px;
+  width: 490px;
+  padding-top: 0.1px;
+}
+#recordSpin2 {
+  position: absolute;
+  background-image:url('../assets/images/record.png');
+  background-size: 82%;
+  margin-left: -2vw;
+  margin-top: -4.8vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 490px;
+  width: 490px;
+  padding-top: 0.1px;
+}
+.recordSpinActive {
+  animation: 3s spin linear infinite;
+}
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to { transform: rotate(360deg); }
+}
+.recordForwardSpinActive {
+  animation: 1.5s spin linear infinite;
+}
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to { transform: rotate(360deg); }
+}
+.recordRevSpinActive {
+  animation: 3s revSpin linear infinite;
+}
+@keyframes revSpin {
+  from {transform: rotate(0deg);}
+  to { transform: rotate(-360deg); }
+}
+#recordImg1 {
+  background-image:url('../assets/images/tribe2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 165px;
+  width: 165px;
+  border-radius: 100%;
+  margin:auto;
+  margin-top: 22.5vh;
+  animation: .5s appear linear;
+}
+#recordImg2 {
+/*  background-image:url('../assets/images/tribe2.jpeg');*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 165px;
+  width: 165px;
+  border-radius: 100%;
+  margin:auto;
+  margin-top: 22.5vh;
+  animation: .5s appear linear;
+}
+@keyframes appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 .play {
   height: 8vh;
   width: 65px;
@@ -109,6 +182,10 @@ height: 8vh;
 .play:hover {
   color: blue;
   cursor: pointer;
+}
+.mixerTitle {
+  height: 3.5vh;
+  overflow-x: auto;
 }
 .mixer {
   display: inline-block;
@@ -234,12 +311,21 @@ height: 8vh;
   display: flex;
   justify-content: space-around;
 }
-.loop {
-  background-image:url('../assets/images/loop.png');
+.forward {
+  background-image:url('../assets/images/rewind.png');
   background-size: cover;
   height:2.7rem;
   width:2.7rem;
   box-sizing: border-box;
+  transform: rotate(180deg);
+  transition: all .2s linear;
+}
+.forward:hover {
+  height:2.5rem;
+  width:2.5rem;
+  background-image:url('../assets/images/rewindActive.png');
+  background-size: cover;
+  cursor: pointer;
 }
 .rewind {
   background-image:url('../assets/images/rewind.png');
@@ -247,9 +333,13 @@ height: 8vh;
   height:2.7rem;
   width:2.7rem;
   box-sizing: border-box;
+  transition: all .2s linear;
 }
-.loop:hover {
-  animation: 5s loop infinite linear;
+.rewind:hover {
+  height:2.5rem;
+  width:2.5rem;
+  background-image:url('../assets/images/rewindActive.png');
+  background-size: cover;
   cursor: pointer;
 }
 @keyframes loop {
