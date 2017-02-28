@@ -73,7 +73,7 @@
 .chooseRecord {
 text-align: center;
 font-size: 1.85rem;
-margin-top: 4vh;
+margin-top: 6vh;
 height: 8vh;
 color:rgba(255,255,255,.7);
 text-shadow: 2px 2px 5px black;
@@ -108,11 +108,11 @@ transition: all .5s;
   position: absolute;
   background-image:url('../assets/images/record.png');
   background-size: cover;
-  margin-left: .75vw;
-  margin-top: 3vh;
+  margin-left: 1.8vw;
+  margin-top: 1.8vh;
   background-position: center;
   background-repeat: no-repeat;
-  height: 70%;
+  height: 73%;
   width: 28.2%;
   padding-top: 0.1px;
 }
@@ -120,11 +120,11 @@ transition: all .5s;
   position: absolute;
   background-image:url('../assets/images/record.png');
   background-size: cover;
-  margin-left: .75vw;
-  margin-top: 3vh;
+  margin-left: 1.8vw;
+  margin-top: 1.8vh;
   background-position: center;
   background-repeat: no-repeat;
-  height: 70%;
+  height: 73%;
   width: 28.2%;
   padding-top: 0.1px;
 }
