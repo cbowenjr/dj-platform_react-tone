@@ -1,4 +1,9 @@
 .App {
+  background-image:url('../assets/images/party.jpeg');
+  background-size: cover;
+  background-position-y: 160%;
+  background-repeat: no-repeat;
+  filter: grayscale(80%);
 }
 .appHeader {
   font-family: 'Shadows Into Light', cursive;
@@ -7,23 +12,25 @@
   height: 150px;
   text-align: center;
   line-height: 150px;
-  font-size: 4rem;
-  letter-spacing: 5px;
+  font-size: 6rem;
+  letter-spacing: 7px;
+  color:rgba(255,255,255,.7);
+  text-shadow: 2px 2px 10px black;
 }
 #potato {
   background-image:url('../assets/images/potato.png');
-  background-size: 75%;
+  background-size: 85%;
   background-position: center;
   background-repeat: no-repeat;
   display: inline-block;
-  height:50px;
-  width:100px;
+  height:70px;
+  width:120px;
   transform: rotate(-90deg);
   margin-right: -23px;
   margin-left: -23px;
 }
 .header-spin {
-  background-color: #222;
+  background-color: black;
   position: relative;
   top: 5vh;
   display: inline-block;
@@ -63,14 +70,17 @@
 }
 .chooseRecord {
 text-align: center;
-font-size: 1.7rem;
-margin-top: 4.5vh;
-height: 7.5vh;
+font-size: 1.85rem;
+margin-top: 4vh;
+height: 8vh;
+color:rgba(255,255,255,.7);
+text-shadow: 2px 2px 5px black;
+transition: all .5s;
 }
 .chooseRecord:hover {
   cursor: pointer;
-  color: blue;
-  transition: all .5s;
+  color: red;
+  text-shadow: 2px 2px 5px white;
 }
 .djSet {
   position: relative;
@@ -139,6 +149,7 @@ height: 7.5vh;
 }
 #recordImg1 {
 /*  background-image:url('../assets/images/tribe2.jpeg');*/
+  filter: grayscale(0);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -306,6 +317,26 @@ height: 7.5vh;
 .volumeDown:hover {
   border-top: 20px solid blue;
   cursor: pointer;
+}
+#horn {
+  background-image:url('../assets/images/horn.jpeg');
+  background-size: 120%;
+  background-position: center;
+  position: absolute;
+  height:4rem;
+  width:4rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  line-height: 4rem;
+  box-shadow: 2px 2px 20px black;
+  transition: all .5s;
+  margin-top:-10.5vh;
+  margin-left:-2.4vw;
+}
+#horn:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
 .loopRew {
   margin-top: 3vh;

@@ -28,6 +28,23 @@ class Turntable2 extends Component {
     this.delay = this.delay.bind(this);
     this.reverse = this.reverse.bind(this);
     this.forward = this.forward.bind(this);
+    this.blowHorn = this.blowHorn.bind(this);
+  }
+  componentDidMount () {
+    let player = new Tone.GrainPlayer({
+      "url" : `http://k003.kiwi6.com/hotlink/x3votujvo1.mp3`,
+      "loop" : false,
+      "grainSize" : 0.1,
+      "overlap" : 0.05,
+    }).toMaster();
+    this.setState({
+      horn:player
+    })
+  }
+  blowHorn () {
+    let horn = this.state.horn;
+    horn.start();
+    setTimeout(()=> { horn.stop(); }, 5000)
   }
   fetchRecord(id) {
     let gain = new Tone.Gain({
@@ -304,6 +321,7 @@ class Turntable2 extends Component {
               <p>GAIN</p>
               <div className="volumeDown" id="record2subgain" onClick={this.lowerGain}></div>
             </div>
+            <div id="horn" onClick={this.blowHorn}></div>
             <div className="loopRew">
               <div className="rewind" id="record2rewind" onMouseDown={this.reverse}></div>
               <div className="forward" id="record2forward" onMouseDown={this.forward}></div>
