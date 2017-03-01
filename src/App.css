@@ -108,7 +108,7 @@ transition: all .5s;
   position: absolute;
   background-image:url('../assets/images/record.png');
   background-size: cover;
-  margin-left: 1vw;
+  margin-left: 2vw;
   margin-top: 1.8vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -120,7 +120,7 @@ transition: all .5s;
   position: absolute;
   background-image:url('../assets/images/record.png');
   background-size: cover;
-  margin-left: 1vw;
+  margin-left: 2vw;
   margin-top: 1.8vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -151,15 +151,14 @@ transition: all .5s;
 }
 #recordImg1 {
 /*  background-image:url('../assets/images/tribe2.jpeg');*/
-  filter: grayscale(0);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 35%;
-  width: 33%;
+  height: 32%;
+  width: 35%;
   border-radius: 100%;
   margin:auto;
-  margin-top: 17vh;
+  margin-top: 19vh;
   animation: .5s appear linear;
 }
 #recordImg2 {
@@ -167,11 +166,11 @@ transition: all .5s;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 35%;
-  width: 33%;
+  height: 32%;
+  width: 35%;
   border-radius: 100%;
   margin:auto;
-  margin-top: 17vh;
+  margin-top: 19vh;
   animation: .5s appear linear;
 }
 @keyframes appear {
