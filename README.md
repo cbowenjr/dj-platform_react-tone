@@ -1,8 +1,8 @@
 # Mashed Potatoes
 
 <img src="assets/images/mashed_potatoes.png">
-###...the rough sketch
-<img src="assets/images/mashSketch.jpg">
+<!-- ###...the rough sketch
+<img src="assets/images/mashSketch.jpg"> -->
 
 
 <!-- ### [Demo](https://build-lqoivbrnwp.now.sh) -->
