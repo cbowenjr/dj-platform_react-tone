@@ -1,7 +1,7 @@
 # Mashed Potatoes
 
-<img src="assets/mashSketch.jpg">
-<img src="assets/PEP_Talks.png">
+<img src="assets/images/mashSketch.jpg">
+<img src="assets/images/mashed_potatoes.png">
 
 <!-- ### [Demo](https://build-lqoivbrnwp.now.sh) -->
 
