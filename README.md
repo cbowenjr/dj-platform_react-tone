@@ -28,14 +28,14 @@ I ran into some 'cross-origin resource sharing' issues, when trying to fetch my 
 
 ###Complications/Future Improvements
 1. Ran into some cross-origin resources sharing issues, so a [chrome extention](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) is needed when using the app, in order to fetch the sound files.
-2. I wanted to give the user the ability to 'scratch', 'rewind', 'forward', the track by touching the record itself but was unable to link the animation with the controls. * 
+2. I wanted to give the user the ability to 'scratch', 'rewind', 'forward', the track by touching the record itself but was unable to link the animation with the controls.
 3. I want to incorporate a user profile system, so that users can create, save and share their mix.
 4. Right now you have to do multiple clicks on a certain parameter to manipulate the audio. I want make that a little smoother, by either changing it to a hold/release type of function or creating slider buttons.
 5. A DJ gave me this tip, great advise. I want to add a cue button, that 'on click' would save that 'time' or point in the record and allow the user to jump back to that point on click.
 Should help with finding and keeping the '1' when blending records.
 6. Right now I have a list of records that the user can choose from, but I want to incorporate a way for users to search for, and import records they want to mashup.
 
-* Look out for these upcoming features!
+Look out for these upcoming features!
 
 
 
