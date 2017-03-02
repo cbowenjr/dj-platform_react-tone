@@ -1,6 +1,5 @@
 # Mashed Potatoes
-##Ever wanted to let out that inner DJ? 
-###Now you can mashup records and 'rock the crowd' with Mashed Potatoes.
+###Let out that inner DJ!!!
 Mashed Potatoes is a DJ platform/set which allows you to select two different audio sources, manipulate them independently, and play them back simultaneously. 
 
 <img src="assets/images/mashed_potatoes.png">
