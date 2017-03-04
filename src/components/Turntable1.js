@@ -252,7 +252,7 @@ class Turntable1 extends Component {
    }
   render() {
     return (
-      <div>
+      <div className="singleRec">
       <ul className="recordsUL hide" id="record1UL">
         <li className="recordTitles" id={require('../../assets/images/tribe_bonita.jpeg')} title="3ttkerbsu3" ref={(list) => {this.list1 = list; }} onClick={() => {this.changeRecord(this.list1) }}>Bonita Applebum (Instrumental) | A Tribe Called Quest</li>
         <li className="recordTitles" id={require('../../assets/images/tribe_kickit.jpeg')} title="wgon64j4gd" ref={(list) => {this.list2 = list; }} onClick={() => {this.changeRecord(this.list2) }}>Can I Kick It (Instrumental) | A Tribe Called Quest</li>

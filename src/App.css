@@ -58,7 +58,7 @@
   height:60vh;
   width: 50vw;
   overflow: scroll;
-  z-index: 1;
+  z-index: 2;
 }
 .recordTitles {
   list-style: none;
@@ -107,25 +107,24 @@ transition: all .5s;
 #recordSpin1 {
   position: absolute;
   background-image:url('../assets/images/record.png');
-  background-size: cover;
-  margin-left: 2vw;
-  margin-top: 1.8vh;
+  background-size: 85%;
+  margin-left: -1.6vw;
   background-position: center;
   background-repeat: no-repeat;
-  height: 73%;
-  width: 28.2%;
+  height:445px;
+  width: 500px;
   padding-top: 0.1px;
+  z-index: 0;
 }
 #recordSpin2 {
   position: absolute;
   background-image:url('../assets/images/record.png');
-  background-size: cover;
-  margin-left: 2vw;
-  margin-top: 1.8vh;
+  background-size: 85%;
+  margin-left: -1.6vw;
   background-position: center;
   background-repeat: no-repeat;
-  height: 73%;
-  width: 28.2%;
+  height:445px;
+  width: 500px;
   padding-top: 0.1px;
 }
 .recordSpinActive {
@@ -154,11 +153,11 @@ transition: all .5s;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 32%;
-  width: 35%;
+  height: 35%;
+  width: 31.5%;
   border-radius: 100%;
   margin:auto;
-  margin-top: 19vh;
+  margin-top: 20vh;
   animation: .5s appear linear;
 }
 #recordImg2 {
@@ -166,11 +165,11 @@ transition: all .5s;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 32%;
-  width: 35%;
+  height: 35%;
+  width: 31.5%;
   border-radius: 100%;
   margin:auto;
-  margin-top: 19vh;
+  margin-top: 20vh;
   animation: .5s appear linear;
 }
 @keyframes appear {
@@ -197,7 +196,7 @@ transition: all .5s;
   cursor: pointer;
 }
 .mixerTitle {
-  height: 3.5vh;
+  height: 3.2vh;
   overflow-x: auto;
 }
 .mixer {
@@ -209,6 +208,7 @@ transition: all .5s;
   text-align: center;
   border-top:.5vw solid black;
   border-bottom:.5vw solid black;
+  z-index: 1;
 }
 #mixer1 {
   border-right: 5px solid black;
@@ -392,4 +392,21 @@ transition: all .5s;
 }
 .disappear {
   opacity: 0;
+}
+@media (max-width: 1000px) {
+  .djSet {
+    position: relative;
+    display: block;
+    font-family: 'Architects Daughter', cursive;
+  }
+  .turnMix {
+    display: flex;
+    width: 50vw;
+    margin:auto;
+    color: white;
+    text-align: center;
+  }
+  .singleRec {
+    text-align: center;
+  }
 }
