@@ -5,8 +5,8 @@ Mashed Potatoes is a DJ platform/set which allows you to select two different au
 <img src="assets/images/mashed_potatoes.png">
 
 ##Installation
-The live app will be up soon, but if you want to check it out feel free to fork/clone this repo, and npm install.
- You'll need to have this chrome extension [CORS](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) installed as well.
+ In order to use the app you'll need to have this chrome extension [CORS](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) installed.
+ Once installed, Rock the crowd. [Launch App](https://mashed-potatoes.herokuapp.com/)
 
 ##Technologies Used
 - HTML
