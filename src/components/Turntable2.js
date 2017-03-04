@@ -34,7 +34,7 @@ class Turntable2 extends Component {
   }
   componentDidMount () {
     let player = new Tone.GrainPlayer({
-      "url" : `http://k003.kiwi6.com/hotlink/x3votujvo1.mp3`,
+      "url" : `https://k003.kiwi6.com/hotlink/x3votujvo1.mp3`,
       "loop" : false,
       "grainSize" : 0.1,
       "overlap" : 0.05,
@@ -77,7 +77,7 @@ class Turntable2 extends Component {
       "wet" : 0
     }).toMaster();
     let player = new Tone.GrainPlayer({
-      "url" : `http://k003.kiwi6.com/hotlink/${id}.mp3`,
+      "url" : `https://k003.kiwi6.com/hotlink/${id}.mp3`,
       "loop" : true,
       "grainSize" : 0.1,
       "overlap" : 0.05,
