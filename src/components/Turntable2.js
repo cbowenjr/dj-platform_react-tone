@@ -282,7 +282,7 @@ class Turntable2 extends Component {
    }
   render() {
     return (
-      <div className="singleRec">
+      <div className="singleRec2">
       <ul className="recordsUL hide" id="record2UL">
         <li className="recordTitles" id={require('../../assets/images/tribe_bonita.jpeg')} title="3ttkerbsu3" ref={(list) => {this.list1 = list; }} onClick={() => {this.changeRecord(this.list1) }}>Bonita Applebum (Instrumental) | A Tribe Called Quest</li>
         <li className="recordTitles" id={require('../../assets/images/tribe_kickit.jpeg')} title="wgon64j4gd" ref={(list) => {this.list2 = list; }} onClick={() => {this.changeRecord(this.list2) }}>Can I Kick It (Instrumental) | A Tribe Called Quest</li>
@@ -310,7 +310,7 @@ class Turntable2 extends Component {
         <li className="recordTitles" id={require('../../assets/images/mosdef_msfatbooty.jpeg')} title="mshy33xl6q" ref={(list) => {this.list25 = list; }} onClick={() => {this.changeRecord(this.list25) }}>Mos Def | Ms Fat Booty</li>
       </ul>
         <h2 className="chooseRecord" id="chooseRecord2" onClick={this.showRecords}>{this.state.record}</h2>
-        <div className="turnMix">
+        <div className="turnMix" id="turnMix2">
           <div className="mixer" id="mixer2">
             <h3 className="mixerTitle">{this.state.record}</h3>
             <div className="filtersContainer">
