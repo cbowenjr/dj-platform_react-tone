@@ -10,7 +10,9 @@ class Turntable2 extends Component {
       time:0,
       count:0,
       reverse:false,
-      forward:false
+      forward:false,
+      horn:'none',
+      airhorn:false
     }
     this.changeRecord = this.changeRecord.bind(this);
     this.showRecords = this.showRecords.bind(this);
@@ -43,8 +45,20 @@ class Turntable2 extends Component {
   }
   blowHorn () {
     let horn = this.state.horn;
+    if (this.state.horn!=='none' && this.state.airhorn===false) {
     horn.start();
-    setTimeout(()=> { horn.stop(); }, 5000)
+    this.setState({
+      airhorn:true
+    })
+    } else if (this.state.horn!=='none' && this.state.airhorn===true) {
+      horn.stop();
+      horn.start();
+      this.setState({
+        airhorn:true
+      })
+    } else {
+      setTimeout(this.blowHorn, 1000)
+    }
   }
   fetchRecord(id) {
     let gain = new Tone.Gain({
