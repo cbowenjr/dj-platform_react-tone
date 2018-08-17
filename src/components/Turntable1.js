@@ -47,7 +47,7 @@ class Turntable1 extends Component {
       "wet" : 0
     }).toMaster();
     let player = new Tone.GrainPlayer({
-      "url" : `https://k003.kiwi6.com/hotlink/${id}.mp3`,
+      "url" : `https://cors-anywhere.herokuapp.com/https://k003.kiwi6.com/hotlink/${id}.mp3`,
       "loop" : true,
       "grainSize" : 0.1,
       "overlap" : 0.05,
